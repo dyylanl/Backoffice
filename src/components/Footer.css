@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #4361ee;
+  --dark-color: #1e1e2f;
+  --light-color: #f1f3f5;
+  --border-radius: 12px;
+  --box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  text-align: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.footer:hover {
+  background-color: #252541;
+}
