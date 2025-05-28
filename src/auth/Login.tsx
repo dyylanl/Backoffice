@@ -4,7 +4,6 @@ import { UserContext } from '../UserContext';
 import './Login.css';
 import { jwtDecode } from 'jwt-decode';
 import { API_BASE_URL } from '../config';
-import { faL } from '@fortawesome/free-solid-svg-icons';
 
 
 
