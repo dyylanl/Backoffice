@@ -14,7 +14,7 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api\/users/, ''),
         headers: {
-          'Access-Control-Allow-Origin': 'https://backoffice-three-theta.vercel.app',
+          'Access-Control-Allow-Origin': 'https://backoffice-seven-fawn.vercel.app',
         },
       },
     },

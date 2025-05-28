@@ -4,6 +4,7 @@ import { UserContext } from '../UserContext';
 import './Login.css';
 import { jwtDecode } from 'jwt-decode';
 import { API_BASE_URL } from '../config';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -76,6 +77,7 @@ export default function Login() {
       return;
     }
 
+    console.log("Fetching..........");
     try {
       const loginResponse = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
@@ -83,8 +85,21 @@ export default function Login() {
         body: JSON.stringify({ email, password }),
       });
 
+      if (loginResponse.status == 400) {
+        setError('La contraseña debe contener al menos 8 caracteres.');
+        setLoading(false);
+        return;
+      }
+
       if (loginResponse.status === 401) {
         setError('Credenciales incorrectas');
+        setLoading(false);
+        return;
+      }
+
+      console.log("Resp---------->", loginResponse);
+      if (loginResponse.status === 404) {
+        setError('No hay respuesta del servidor\nComuniquese con un administrador de sistemas.');
         setLoading(false);
         return;
       }
