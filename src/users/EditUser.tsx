@@ -141,14 +141,12 @@ function EditUser() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      // Enviar solo los campos a modificar, sin el id como clave
       const dataToSend = {
         description: formData.description,
         location: formData.location,
         name: formData.name,
         profile_photo: formData.profile_photo,
         surname: formData.surname,
-        // agrega aquí otros campos si el backend los acepta
       };
 
       const response = await authenticatedFetch(`${API_BASE_URL}/users/${id}`, {
