@@ -3,10 +3,28 @@ import { useNavigate, useParams } from 'react-router-dom';
 import './EditUser.css';
 import { API_BASE_URL } from '../config';
 
+interface UserData {
+  id: number;
+  admin?: boolean;
+  blocked: boolean;
+  created_at: string;
+  description: string;
+  email: string;
+  location: string;
+  name: string;
+  phone: string;
+  profile_photo: string;
+  surname: string;
+  updated_at: string;
+  role?: string;
+  username?: string;
+}
+
 function EditUser() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<UserData>({
+    id: 0,
     admin: false,
     blocked: false,
     created_at: '',
@@ -18,30 +36,65 @@ function EditUser() {
     profile_photo: '',
     surname: '',
     updated_at: '',
+    role: '', 
+    username: '',
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const authenticatedFetch = async (url: string, options?: RequestInit) => {
+    const token = localStorage.getItem('token');
+    
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      ...(options?.headers as Record<string, string>),
+    };
+
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const response = await fetch(url, {
+      ...options,
+      headers,
+    });
+
+    if (response.status === 401) {
+      console.error('Sesión expirada o no autorizado. Redirigiendo al login...');
+      localStorage.removeItem('token'); 
+      localStorage.removeItem('userData');
+      navigate('/login');
+      throw new Error('Unauthorized');
+    }
+
+    return response; 
+  };
+
+
   useEffect(() => {
     const fetchUser = async () => {
+      if (!id) {
+        setError('ID de usuario no proporcionado.');
+        setLoading(false);
+        return;
+      }
+
       try {
-        const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+        const response = await authenticatedFetch(`${API_BASE_URL}/users/${id}`, {
           method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
         });
 
         if (!response.ok) {
-          throw new Error('Error al obtener los datos del usuario');
+          const errorText = await response.text();
+          throw new Error(errorText || 'Error al obtener los datos del usuario');
         }
 
         const result = await response.json();
-        // Si tu backend responde con { data: {...} }
-        const data = result.data ? result.data : result;
+        const data: UserData = result.data ? result.data : result;
 
         setFormData({
-          admin: data.admin ?? false,
+          id: data.id, 
+          admin: data.role === 'admin' || data.admin, 
           blocked: data.blocked ?? false,
           created_at: data.created_at || '',
           description: data.description || '',
@@ -52,16 +105,21 @@ function EditUser() {
           profile_photo: data.profile_photo || '',
           surname: data.surname || '',
           updated_at: data.updated_at || '',
+          role: data.role || '', 
+          username: data.username || '',
         });
-      } catch (error) {
-        setError('Ocurrió un error al cargar los datos del usuario');
+      } catch (err: any) {
+        if (err.message !== 'Unauthorized') {
+          setError(err.message || 'Ocurrió un error al cargar los datos del usuario');
+          console.error('Error fetching user data:', err);
+        }
       } finally {
         setLoading(false);
       }
     };
 
     fetchUser();
-  }, [id]);
+  }, [id, navigate]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -76,30 +134,40 @@ function EditUser() {
     setFormData((prevData) => ({
       ...prevData,
       [name]: checked,
+      ...(name === 'admin' && { role: checked ? 'admin' : 'user' }) 
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     try {
-      const response = await fetch(`${API_BASE_URL}/users/modify`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ id: Number(id), ...formData }),
+      // Enviar solo los campos a modificar, sin el id como clave
+      const dataToSend = {
+        description: formData.description,
+        location: formData.location,
+        name: formData.name,
+        profile_photo: formData.profile_photo,
+        surname: formData.surname,
+        // agrega aquí otros campos si el backend los acepta
+      };
+
+      const response = await authenticatedFetch(`${API_BASE_URL}/users/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(dataToSend),
       });
 
       if (!response.ok) {
-        throw new Error('Error al modificar el usuario');
+        const errorText = await response.text();
+        throw new Error(errorText || 'Error al modificar el usuario');
       }
 
       alert('Usuario modificado exitosamente');
       navigate('/users');
-    } catch (error) {
-      console.error('Error al modificar usuario:', error);
-      alert('Ocurrió un error al modificar el usuario');
+    } catch (err: any) {
+      if (err.message !== 'Unauthorized') {
+        console.error('Error al modificar usuario:', err);
+        alert(err.message || 'Ocurrió un error al modificar el usuario');
+      }
     }
   };
 

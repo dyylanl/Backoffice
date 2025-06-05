@@ -44,7 +44,6 @@ export default function Login() {
 
   const fetchUserData = async (userId: number, token: string): Promise<UserData> => {
     try {
-      console.log("Fetching user data for userId:", userId);
       const res = await fetch(`${API_BASE_URL}/users/${userId}`, {
         method: 'GET',
         headers: { 
@@ -76,7 +75,6 @@ export default function Login() {
       return;
     }
 
-    console.log("Fetching..........");
     try {
       const loginResponse = await fetch(`${API_BASE_URL}/auth/login`, {
         method: 'POST',
@@ -96,7 +94,12 @@ export default function Login() {
         return;
       }
 
-      console.log("Resp---------->", loginResponse);
+      if (loginResponse.status === 403) {
+        setError('Tu cuenta está bloqueada. Contacta al administrador.');
+        setLoading(false);
+        return;
+      }
+
       if (loginResponse.status === 404) {
         setError('No hay respuesta del servidor\nComuniquese con un administrador de sistemas.');
         setLoading(false);
@@ -117,7 +120,6 @@ export default function Login() {
       const decodedToken = jwtDecode<DecodedToken>(token);
       
       
-      console.log("Decoded token:", decodedToken);
 
 
       const userId = decodedToken.sub;
@@ -128,7 +130,6 @@ export default function Login() {
 
       const userData = await fetchUserData(userId, token);
 
-      console.log("User data received:", userData);
 
       if (!userData) {
         throw new Error('No se recibieron datos del usuario');
@@ -221,10 +222,6 @@ export default function Login() {
             'Iniciar sesión'
           )}
         </button>
-
-        {/* <p className="register-link">
-          ¿No tienes una cuenta? <Link to="/createUser">Registra un nuevo administrador</Link>
-        </p> */}
       </form>
     </div>
   );

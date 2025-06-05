@@ -41,7 +41,6 @@ function Profile() {
         const userData = JSON.parse(localStorage.getItem('userData') || '{}');
 
         const id = userData.id;
-        console.log('ID del usuario:', id);
         if (!id) {
           throw new Error('No se pudo obtener el ID del usuario.');
         }

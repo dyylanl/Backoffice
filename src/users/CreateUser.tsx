@@ -25,7 +25,6 @@ function CreateUser() {
 
         const {email, password, name, surname } = formData;
 
-        console.log("formData", formData);
 
         const body = {
             email,
@@ -34,7 +33,6 @@ function CreateUser() {
             surname,
             role: "admin", 
         };
-        console.log(body);
         try {
             const response = await fetch(`${API_BASE_URL}/auth/admins`, {
                 method: 'POST',

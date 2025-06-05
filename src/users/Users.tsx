@@ -3,40 +3,88 @@ import { useNavigate } from 'react-router-dom';
 import './Users.css';
 import { API_BASE_URL } from '../config';
 
+interface UserData {
+  id: number;
+  username: string;
+  name: string;
+  surname: string;
+  email: string;
+  location?: string;
+  role: string;
+  blocked: boolean;
+  profile_photo?: string;
+  description?: string;
+  created_at?: string;
+  updated_at?: string;
+  verified?: boolean;
+  phone?: string;
+}
+
 function Users() {
   const navigate = useNavigate();
-  const [users, setUsers] = useState<any[]>([]);
-  const [filteredUsers, setFilteredUsers] = useState<any[]>([]);
+  const [users, setUsers] = useState<UserData[]>([]);
+  const [filteredUsers, setFilteredUsers] = useState<UserData[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Esta función se encarga de añadir el token de autorización.
+  const authenticatedFetch = async (url: string, options?: RequestInit) => {
+    const token = localStorage.getItem('token');
+    
+    const headers: Record<string, string> = {
+      'Content-Type': 'application/json',
+      ...(options?.headers as Record<string, string>),
+    };
+
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+
+    const response = await fetch(url, {
+      ...options,
+      headers,
+    });
+
+    if (response.status === 401) {
+      console.error('Sesión expirada o no autorizado. Redirigiendo al login...');
+      localStorage.removeItem('token');
+      localStorage.removeItem('userData');
+      navigate('/login');
+      throw new Error('Unauthorized');
+    }
+
+    return response;
+  };
+
+
   useEffect(() => {
-    const fetchUsers = async () => {
+    const fetchAllUsers = async () => {
       try {
-        const response = await fetch(`${API_BASE_URL}/users`, {
+        const response = await authenticatedFetch(`${API_BASE_URL}/users`, {
           method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
         });
 
         if (!response.ok) {
-          throw new Error('Error al obtener los usuarios');
+          const errorText = await response.text();
+          throw new Error(errorText || 'Error al obtener los usuarios');
         }
 
         const data = await response.json();
         setUsers(data.data);
         setFilteredUsers(data.data);
-      } catch (error) {
-        setError('Ocurrió un error al obtener los usuarios');
+      } catch (err: any) {
+        if (err.message !== 'Unauthorized') { 
+            setError(err.message || 'Ocurrió un error al obtener los usuarios');
+            console.error('Error fetching users:', err);
+        }
       } finally {
         setLoading(false);
       }
     };
 
-    fetchUsers();
-  }, []);
+    fetchAllUsers();
+  }, [navigate]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value.toLowerCase();
@@ -46,7 +94,9 @@ function Users() {
       (user) =>
         user.name.toLowerCase().includes(term) ||
         user.email.toLowerCase().includes(term) ||
-        user.location?.toLowerCase().includes(term)
+        user.location?.toLowerCase().includes(term) ||
+        user.surname?.toLowerCase().includes(term) ||
+        user.username?.toLowerCase().includes(term)  
     );
     setFilteredUsers(filtered);
   };
@@ -57,22 +107,24 @@ function Users() {
     }
 
     try {
-      const response = await fetch(`${API_BASE_URL}/users/${id}`, {
+
+      const response = await authenticatedFetch(`${API_BASE_URL}/users/${id}`, {
         method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+
       });
 
       if (!response.ok) {
-        throw new Error('Error al eliminar el usuario');
+        const errorText = await response.text();
+        throw new Error(errorText || 'Error al eliminar el usuario');
       }
 
       setUsers(users.filter((user) => user.id !== id));
       setFilteredUsers(filteredUsers.filter((user) => user.id !== id));
-    } catch (error) {
-      console.error('Error al eliminar usuario:', error);
-      alert('Ocurrió un error al eliminar el usuario');
+    } catch (err: any) {
+      if (err.message !== 'Unauthorized') { 
+        console.error('Error al eliminar usuario:', err);
+        alert(err.message || 'Ocurrió un error al eliminar el usuario');
+      }
     }
   };
 
@@ -80,20 +132,21 @@ function Users() {
     navigate(`/editUser/${id}`);
   };
 
-  // Helper para armar el body del usuario para bloquear/desbloquear
-  const buildUserBody = (user: any, blockedValue: boolean) => ({
+  const buildUserBody = (user: UserData, blockedValue: boolean) => ({
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    surname: user.surname,
+    username: user.username,
+    role: user.role,
+    location: user.location || '',
+    description: user.description || '',
+    profile_photo: user.profile_photo || '',
     blocked: blockedValue,
     created_at: user.created_at || '',
-    description: user.description || '',
-    email: user.email,
-    id: user.id,
-    location: user.location || '',
-    name: user.name,
-    profile_photo: user.profile_photo || '',
-    role: user.role || '',
-    surname: user.surname || '',
     updated_at: user.updated_at || '',
-    verified: true,
+    verified: user.verified || false,
+    phone: user.phone || '',
   });
 
   const handleBlock = async (id: number) => {
@@ -101,28 +154,26 @@ function Users() {
     if (!user) return;
 
     try {
-      const response = await fetch(`${API_BASE_URL}/users/block/${id}`, {
+      const response = await authenticatedFetch(`${API_BASE_URL}/users/block/${id}`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        // body: JSON.stringify(buildUserBody(user, true)),
       });
 
       if (!response.ok) {
-        throw new Error('Error al bloquear el usuario');
+        const errorText = await response.text();
+        throw new Error(errorText || 'Error al bloquear el usuario');
       }
 
-      // Actualizar estado del usuario
       const updatedUsers = users.map(u =>
         u.id === id ? { ...u, blocked: true } : u
       );
 
       setUsers(updatedUsers);
       setFilteredUsers(updatedUsers);
-    } catch (error) {
-      console.error('Error al bloquear usuario:', error);
-      alert('Ocurrió un error al bloquear el usuario');
+    } catch (err: any) {
+      if (err.message !== 'Unauthorized') { 
+        console.error('Error al bloquear usuario:', err);
+        alert(err.message || 'Ocurrió un error al bloquear el usuario');
+      }
     }
   };
 
@@ -131,28 +182,27 @@ function Users() {
     if (!user) return;
 
     try {
-      const response = await fetch(`${API_BASE_URL}/users/modify`, {
+      const response = await authenticatedFetch(`${API_BASE_URL}/users/modify`, {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
         body: JSON.stringify(buildUserBody(user, false)),
       });
-      console.log(response)
+
       if (!response.ok) {
-        throw new Error('Error al desbloquear el usuario');
+        const errorText = await response.text();
+        throw new Error(errorText || 'Error al desbloquear el usuario');
       }
 
-      // Actualizar estado del usuario
       const updatedUsers = users.map(u =>
         u.id === id ? { ...u, blocked: false } : u
       );
 
       setUsers(updatedUsers);
       setFilteredUsers(updatedUsers);
-    } catch (error) {
-      console.error('Error al desbloquear usuario:', error);
-      alert('Ocurrió un error al desbloquear el usuario');
+    } catch (err: any) {
+      if (err.message !== 'Unauthorized') { 
+        console.error('Error al desbloquear usuario:', err);
+        alert(err.message || 'Ocurrió un error al desbloquear el usuario');
+      }
     }
   };
 
