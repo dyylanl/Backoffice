@@ -1,0 +1,109 @@
+.rules-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.rules-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.rules-header h1 {
+  font-size: 2rem;
+  color: #4361ee;
+  margin: 0;
+}
+
+.rules-form {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rules-form input,
+.rules-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.rules-form-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.rules-form .cancel {
+  background: #f72585;
+}
+
+.rules-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.rule-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(67, 97, 238, 0.08);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.rule-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #3f37c9;
+}
+
+.rule-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-button.edit {
+  background: #4361ee;
+  color: #fff;
+}
+
+.dashboard-button.delete {
+  background: #f72585;
+  color: #fff;
+}
+
+.rules-loading,
+.rules-error {
+  text-align: center;
+  color: #4361ee;
+  margin: 2rem 0;
+}
+
+.rules-actions-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.rules-search {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}

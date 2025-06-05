@@ -50,7 +50,17 @@ function Dashboard() {
             >
               Ir a usuarios
             </button>
-          </div>          
+          </div>
+          <div className="dashboard-section">
+            <h2>Gestionar reglas</h2>
+            <p>Consulta, crea, edita o elimina reglas del sistema.</p>
+            <button
+              className="dashboard-button"
+              onClick={() => navigate('/rules')}
+            >
+              Ir a reglas
+            </button>
+            </div>          
         </div>
       </main>
       <Footer user={user} />

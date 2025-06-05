@@ -28,7 +28,6 @@ function Users() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // Esta función se encarga de añadir el token de autorización.
   const authenticatedFetch = async (url: string, options?: RequestInit) => {
     const token = localStorage.getItem('token');
     
@@ -132,79 +131,6 @@ function Users() {
     navigate(`/editUser/${id}`);
   };
 
-  // const buildUserBody = (user: UserData, blockedValue: boolean) => ({
-  //   id: user.id,
-  //   email: user.email,
-  //   name: user.name,
-  //   surname: user.surname,
-  //   username: user.username,
-  //   role: user.role,
-  //   location: user.location || '',
-  //   description: user.description || '',
-  //   profile_photo: user.profile_photo || '',
-  //   blocked: blockedValue,
-  //   created_at: user.created_at || '',
-  //   updated_at: user.updated_at || '',
-  //   verified: user.verified || false,
-  //   phone: user.phone || '',
-  // });
-
-  // const handleBlock = async (id: number) => {
-  //   const user = users.find(u => u.id === id);
-  //   if (!user) return;
-
-  //   try {
-  //     const response = await authenticatedFetch(`${API_BASE_URL}/users/block/${id}`, {
-  //       method: 'PUT',
-  //     });
-
-  //     if (!response.ok) {
-  //       const errorText = await response.text();
-  //       throw new Error(errorText || 'Error al bloquear el usuario');
-  //     }
-
-  //     const updatedUsers = users.map(u =>
-  //       u.id === id ? { ...u, blocked: true } : u
-  //     );
-
-  //     setUsers(updatedUsers);
-  //     setFilteredUsers(updatedUsers);
-  //   } catch (err: any) {
-  //     if (err.message !== 'Unauthorized') { 
-  //       console.error('Error al bloquear usuario:', err);
-  //       alert(err.message || 'Ocurrió un error al bloquear el usuario');
-  //     }
-  //   }
-  // };
-
-  // const handleUnblock = async (id: number) => {
-  //   const user = users.find(u => u.id === id);
-  //   if (!user) return;
-
-  //   try {
-  //     const response = await authenticatedFetch(`${API_BASE_URL}/users/modify`, {
-  //       method: 'PUT',
-  //       body: JSON.stringify(buildUserBody(user, false)),
-  //     });
-
-  //     if (!response.ok) {
-  //       const errorText = await response.text();
-  //       throw new Error(errorText || 'Error al desbloquear el usuario');
-  //     }
-
-  //     const updatedUsers = users.map(u =>
-  //       u.id === id ? { ...u, blocked: false } : u
-  //     );
-
-  //     setUsers(updatedUsers);
-  //     setFilteredUsers(updatedUsers);
-  //   } catch (err: any) {
-  //     if (err.message !== 'Unauthorized') { 
-  //       console.error('Error al desbloquear usuario:', err);
-  //       alert(err.message || 'Ocurrió un error al desbloquear el usuario');
-  //     }
-  //   }
-  // };
 
   if (loading) {
     return (

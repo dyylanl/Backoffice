@@ -8,7 +8,7 @@ import ProtectedRoute from './ProtectedRoute';
 import Layout from './components/Layout';
 import Metrics from './Metrics';
 import EditUser from './users/EditUser';
-
+import Rules from './Rules';
 
 function AppRoutes() {
   return (
@@ -65,6 +65,14 @@ function AppRoutes() {
               <EditUser />
             </ProtectedRoute>
           }
+        />
+        <Route
+        path="/rules"
+        element={
+          <ProtectedRoute>
+            <Rules />
+          </ProtectedRoute>
+        }
         />
         </Route>
       </Routes>
