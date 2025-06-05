@@ -182,7 +182,7 @@ export default function Login() {
     <div className="login-container">
       <form onSubmit={handleLogin} className="login-form">
         <h1>Iniciar sesión</h1>
-        <p className="admin-notice">Solo para administradores</p>
+        <p className="admin-notice">* Solo para administradores *</p>
         {error && <div className="error-box">{error}</div>}
 
         <div className="form-group">
