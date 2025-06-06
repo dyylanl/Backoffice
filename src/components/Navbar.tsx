@@ -20,6 +20,7 @@ function Navbar() {
           <li><Link to="/dashboard">Inicio</Link></li>
           <li><Link to="/metrics">Métricas</Link></li>
           <li><Link to="/users">Usuarios</Link></li>
+          <li><Link to="/rules">Reglas</Link></li>
         </ul>
 
         {/* Sección derecha */}
