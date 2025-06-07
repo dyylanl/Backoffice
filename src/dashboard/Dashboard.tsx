@@ -26,7 +26,7 @@ function Dashboard() {
         <div className="dashboard-welcome">
           <h1>Bienvenido a Class Connect System</h1>
           <p>
-            Este sistema te permitirá gestionar los cursos y usuarios del sistema. 
+            Este sistema te permitirá gestionar las métricas y usuarios del sistema. 
             Explora las funcionalidades disponibles para optimizar tu tiempo y mejorar la organización.
           </p>
         </div>
