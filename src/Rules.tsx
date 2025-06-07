@@ -196,18 +196,22 @@ function Rules() {
         </button>
         <h1>Gestión de Reglas</h1>
       </div>
+      
       <div className="rules-actions-bar">
-        <input
-          type="text"
-          placeholder="Buscar regla por Título, Descripción o Condición..."
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          className="rules-search"
-        />
-        <button className="dashboard-button" onClick={() => { setShowForm(true); setEditId(null); setFormData({ ApplicationCondition: '', Description: '', Title: '', effectiveDate: '' }); }}>
-          + Nueva Regla
-        </button>
-      </div>
+      <input
+        type="text"
+        placeholder="Buscar regla por Título, Descripción o Condición..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        className="rules-search"
+      />
+      <button className="dashboard-button" onClick={() => { setShowForm(true); setEditId(null); setFormData({ ApplicationCondition: '', Description: '', Title: '', effectiveDate: '' }); }}>
+        + Nueva Regla
+      </button>
+      <button className="dashboard-button logs" onClick={() => navigate('/logs')}>
+        Logs
+      </button>
+    </div>
       {showForm && (
         <form className="rules-form" onSubmit={editId ? handleUpdate : handleCreate}>
           <input

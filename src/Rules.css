@@ -107,3 +107,29 @@
   border-radius: 4px;
   font-size: 1rem;
 }
+
+/* ...existing code... */
+.dashboard-button.logs {
+  background-color: #6c63ff;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.logs-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logs-list {
+  margin-top: 2rem;
+}
+
+.log-card {
+  background: #f7f7fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}

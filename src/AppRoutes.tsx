@@ -9,6 +9,8 @@ import Layout from './components/Layout';
 import Metrics from './Metrics';
 import EditUser from './users/EditUser';
 import Rules from './Rules';
+import Logs from './Logs';
+
 
 function AppRoutes() {
   return (
@@ -73,6 +75,14 @@ function AppRoutes() {
             <Rules />
           </ProtectedRoute>
         }
+        />
+          <Route
+          path="/logs"
+          element={
+            <ProtectedRoute>
+              <Logs />
+            </ProtectedRoute>
+          }
         />
         </Route>
       </Routes>
