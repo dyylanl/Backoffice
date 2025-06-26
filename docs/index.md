@@ -2,96 +2,104 @@
 title: Guía de Usuario — Backoffice
 layout: default
 ---
+Comprendo perfectamente lo que necesitas. Aquí tienes una guía de usuario completa para tu backoffice, formateada en Markdown, lista para subir a tu GitHub Page:
 
-# Guía de Usuario del Sistema de Administración
+Guía de Usuario del Backoffice
 
-Bienvenido/a al Backoffice del sistema. Esta plataforma permite a los administradores gestionar métricas, usuarios y reglas operativas de forma centralizada y eficiente.
+¡Bienvenido a la guía de usuario de nuestro Backoffice! Esta herramienta está diseñada para que los administradores gestionen eficientemente las métricas del sistema, los usuarios y las reglas de negocio. Aquí te explicamos cómo utilizar cada sección.
 
----
+1. Inicio de Sesión
 
-## 1. Acceso al Sistema
+Para acceder al Backoffice, utiliza tus credenciales de administrador en la pantalla de inicio de sesión. Si tienes problemas para acceder, contacta al soporte técnico.
 
-1. Ingresá a la URL del Backoffice.
-2. Iniciá sesión con tus credenciales de administrador.
-3. Si no tenés cuenta, contactá al administrador para que te la cree.
+2. Gestión de Métricas
 
----
+La sección de Gestión de Métricas te proporciona una visión detallada del rendimiento de nuestro sistema backend a través de gráficos interactivos de Datadog.
 
-## 2 Gestión de Métricas
+2.1 Visualización de Gráficos
 
-Visualizá indicadores en tiempo real del backend utilizando gráficos de **Datadog**.
+Una vez dentro de la sección de Métricas, podrás visualizar distintos paneles que muestran el estado y el rendimiento del back:
 
-### 2.2 Métricas disponibles:
+    Uso de CPU: Observa el porcentaje de uso del procesador a lo largo del tiempo.
 
-- **CPU**: Visualiza la carga de procesamiento.
-- **RAM**: Controla la memoria en uso.
-- **Servidor**: Estado general de recursos del backend.
+    Rendimiento del Servidor: Monitorea la carga general del servidor y su capacidad de respuesta.
 
-### 2.3 Uso:
+    Uso de RAM: Revisa la memoria RAM utilizada para identificar posibles cuellos de botella.
 
-1. Hacé clic en la pestaña **Métricas**.
-2. Observá los gráficos distribuidos en columnas.
-3. Interactuá con zoom, hover y detalles.
-4. Si tarda en cargar, esperá unos segundos.
+    Otras Métricas Relevantes: También encontrarás gráficos relacionados con el tráfico de red, latencia de la base de datos, errores del sistema, etc.
 
----
+Estos gráficos te permiten identificar rápidamente cualquier anomalía o problema de rendimiento, facilitando la toma de decisiones para optimizar la infraestructura.
 
-## 3 Gestión de Usuarios
+3. Gestión de Usuarios
 
-Administrá todos los perfiles registrados.
+La sección de Gestión de Usuarios te permite controlar y administrar todos los usuarios registrados en el sistema, incluyendo la creación de nuevos administradores.
 
-### 3.1 Funcionalidades:
+3.1 Lista de Usuarios
 
-- Listar usuarios.
-- Editar nombre y rol (usuario/administrador).
-- Eliminar usuarios.
-- Bloquear cuentas.
-- Crear nuevos administradores.
+Al ingresar a esta sección, verás un listado de todos los usuarios. Para encontrar un usuario específico, puedes utilizar la barra de búsqueda o los filtros disponibles (si los hubiera).
 
-### 3.2 Uso:
+3.2 Acciones Disponibles para Usuarios
 
-1. Entrá a la pestaña **Usuarios**.
-2. Hacé clic en **Editar** para cambiar nombre o rol.
-3. Seleccioná **Eliminar** o **Bloquear** según necesites.
-4. Para crear, presioná **Crear nuevo usuario**, completá los datos y guardá.
+Para cada usuario en la lista, tendrás las siguientes opciones:
 
-> ⚠️ *Los cambios se aplican en tiempo real. Usá precaución al eliminar o bloquear cuentas.*
+    Cambiar Nombres: Modifica el nombre de un usuario. Esto es útil para corregir errores o actualizar la información.
 
----
+    Cambiar Permisos: Asigna o revoca permisos a los usuarios. Esto es crucial para controlar qué funcionalidades pueden acceder dentro del sistema. Por ejemplo, puedes otorgar permisos de solo lectura o permisos de edición a ciertas secciones.
 
-## 4 Gestión de Reglas
+    Eliminar Usuarios: Elimina permanentemente a un usuario del sistema. ¡Atención! Esta acción es irreversible. Asegúrate de que realmente deseas eliminar al usuario antes de confirmar.
 
-Establecé condiciones importantes del sistema backend.
+    Bloquear Usuarios: Deshabilita temporalmente la cuenta de un usuario. Un usuario bloqueado no podrá iniciar sesión. Puedes desbloquearlo en cualquier momento.
 
-### 4.1 Funcionalidades:
+3.3 Crear Administradores
 
-- Crear, editar y eliminar reglas.
-- Visualizar historial (log) de cambios de reglas.
+Desde esta sección también puedes crear nuevos usuarios con privilegios de administrador. Esta opción es fundamental para añadir personal con acceso total al Backoffice. Al crear un nuevo administrador, deberás proporcionar la información necesaria (nombre de usuario, contraseña, etc.) y asegurarte de que se le asignen los permisos de administrador correspondientes.
 
-### 4.2 Uso:
+4. Gestión de Reglas
 
-1. Accedé a la pestaña **Reglas**.
-2. Para crear, presioná **Agregar regla** y completá los campos.
-3. Usá **Editar** o **Eliminar** en las reglas existentes.
-4. Consultá el **Log de cambios** para ver quién hizo qué y cuándo.
+La sección de Gestión de Reglas te permite crear, modificar y eliminar las reglas de negocio que rigen el comportamiento de tu sistema. Además, mantiene un registro detallado de todas las modificaciones.
 
----
+4.1 Creación de Reglas
 
-## 5. Roles del Sistema
+Para crear una nueva regla:
 
-- **Administrador**: Acceso total a todas las funcionalidades.
----
+    Haz clic en el botón "Crear Nueva Regla" (o similar).
 
-## 6. Recomendaciones
+    Se te presentará un formulario donde deberás definir los parámetros de la regla. Estos pueden incluir condiciones, acciones, prioridades, etc., dependiendo de la complejidad de tus reglas de negocio.
 
-- Verificá que los cambios se guarden correctamente.
-- Usá navegadores compatibles y actualizados.
-- No compartas tus credenciales.
-- Revisa los logs para auditoría de cambios.
+    Una vez configurada, guarda la regla.
 
----
+4.2 Edición de Reglas
 
-## 7. Soporte
+Para modificar una regla existente:
 
-En caso de dudas o problemas, contactá al equipo de soporte o al administrador principal.
+    Selecciona la regla que deseas editar de la lista.
 
+    Realiza los cambios necesarios en los parámetros de la regla.
+
+    Guarda los cambios para que se apliquen.
+
+4.3 Eliminación de Reglas
+
+Para eliminar una regla:
+
+    Selecciona la regla que deseas eliminar.
+
+    Haz clic en el botón "Eliminar" (o similar).
+
+    Confirma la acción. ¡Importante! La eliminación de reglas puede afectar el comportamiento del sistema. Procede con precaución.
+
+4.4 Log de Modificaciones de Reglas
+
+Esta sección incluye un log detallado que registra cada creación y modificación de reglas. Este log es invaluable para:
+
+    Auditoría: Permite rastrear quién hizo qué cambios y cuándo.
+
+    Resolución de Problemas: Ayuda a identificar si un problema en el sistema fue causado por una modificación reciente de una regla.
+
+    Seguimiento: Ofrece una cronología completa del ciclo de vida de cada regla.
+
+Cada entrada en el log incluirá al menos la fecha, la hora, el usuario que realizó la acción y una descripción de la modificación.
+
+Soporte
+
+Si tienes alguna pregunta o encuentras algún problema al utilizar el Backoffice, por favor, contacta a nuestro equipo de soporte a través de classconnectadmin@ingsoft2.com
