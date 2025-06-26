@@ -9,7 +9,7 @@ Bienvenido/a al Backoffice del sistema. Esta plataforma permite a los administra
 
 ---
 
-## ✨ Acceso al Sistema
+## 1. Acceso al Sistema
 
 1. Ingresá a la URL del Backoffice.
 2. Iniciá sesión con tus credenciales de administrador.
@@ -17,17 +17,17 @@ Bienvenido/a al Backoffice del sistema. Esta plataforma permite a los administra
 
 ---
 
-## 📊 Gestión de Métricas
+## 2 Gestión de Métricas
 
 Visualizá indicadores en tiempo real del backend utilizando gráficos de **Datadog**.
 
-### Métricas disponibles:
+### 2.2 Métricas disponibles:
 
 - **CPU**: Visualiza la carga de procesamiento.
 - **RAM**: Controla la memoria en uso.
 - **Servidor**: Estado general de recursos del backend.
 
-### Uso:
+### 2.3 Uso:
 
 1. Hacé clic en la pestaña **Métricas**.
 2. Observá los gráficos distribuidos en columnas.
@@ -36,11 +36,11 @@ Visualizá indicadores en tiempo real del backend utilizando gráficos de **Data
 
 ---
 
-## 👥 Gestión de Usuarios
+## 3 Gestión de Usuarios
 
 Administrá todos los perfiles registrados.
 
-### Funcionalidades:
+### 3.1 Funcionalidades:
 
 - Listar usuarios.
 - Editar nombre y rol (usuario/administrador).
@@ -48,7 +48,7 @@ Administrá todos los perfiles registrados.
 - Bloquear cuentas.
 - Crear nuevos administradores.
 
-### Uso:
+### 3.2 Uso:
 
 1. Entrá a la pestaña **Usuarios**.
 2. Hacé clic en **Editar** para cambiar nombre o rol.
@@ -59,16 +59,16 @@ Administrá todos los perfiles registrados.
 
 ---
 
-## ⚙️ Gestión de Reglas
+## 4 Gestión de Reglas
 
 Establecé condiciones importantes del sistema backend.
 
-### Funcionalidades:
+### 4.1 Funcionalidades:
 
 - Crear, editar y eliminar reglas.
 - Visualizar historial (log) de cambios de reglas.
 
-### Uso:
+### 4.2 Uso:
 
 1. Accedé a la pestaña **Reglas**.
 2. Para crear, presioná **Agregar regla** y completá los campos.
@@ -77,14 +77,12 @@ Establecé condiciones importantes del sistema backend.
 
 ---
 
-## 🛡️ Roles del Sistema
+## 5. Roles del Sistema
 
 - **Administrador**: Acceso total a todas las funcionalidades.
-- **Usuario estándar**: Acceso limitado según configuración.
-
 ---
 
-## 📋 Recomendaciones
+## 6. Recomendaciones
 
 - Verificá que los cambios se guarden correctamente.
 - Usá navegadores compatibles y actualizados.
@@ -93,7 +91,7 @@ Establecé condiciones importantes del sistema backend.
 
 ---
 
-## 📞 Soporte
+## 7. Soporte
 
 En caso de dudas o problemas, contactá al equipo de soporte o al administrador principal.
 
