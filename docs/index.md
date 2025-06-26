@@ -1,3 +1,9 @@
+---
+title: Guía de Usuario
+layout: default
+---
+
+
 # Guía de Usuario del Sistema de Administración
 
 Bienvenido/a al Backoffice del sistema. Esta plataforma está diseñada para que administradores puedan gestionar métricas del sistema, usuarios y reglas operativas de forma centralizada y eficiente.
