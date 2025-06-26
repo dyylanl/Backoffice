@@ -1,102 +1,99 @@
 ---
-title: Guía de Usuario
+title: Guía de Usuario — Backoffice
 layout: default
 ---
 
-
 # Guía de Usuario del Sistema de Administración
 
-Bienvenido/a al Backoffice del sistema. Esta plataforma está diseñada para que administradores puedan gestionar métricas del sistema, usuarios y reglas operativas de forma centralizada y eficiente.
+Bienvenido/a al Backoffice del sistema. Esta plataforma permite a los administradores gestionar métricas, usuarios y reglas operativas de forma centralizada y eficiente.
 
 ---
 
 ## ✨ Acceso al Sistema
 
-1. Ingresar a la URL del backoffice.
-2. Iniciar sesión con tus credenciales de administrador.
-3. Si no tenés una cuenta, contactá con un administrador superior para que te dé acceso.
+1. Ingresá a la URL del Backoffice.
+2. Iniciá sesión con tus credenciales de administrador.
+3. Si no tenés cuenta, contactá al administrador para que te la cree.
 
 ---
 
 ## 📊 Gestión de Métricas
 
-La sección **"Métricas"** permite visualizar en tiempo real los indicadores del sistema backend mediante gráficos provistos por **Datadog**.
+Visualizá indicadores en tiempo real del backend utilizando gráficos de **Datadog**.
 
 ### Métricas disponibles:
 
-* **Uso de CPU**: Visualiza la carga de procesamiento del servidor.
-* **Uso de RAM**: Monitorea la memoria utilizada.
-* **Uso del Servidor**: Estado general de los recursos backend.
+- **CPU**: Visualiza la carga de procesamiento.
+- **RAM**: Controla la memoria en uso.
+- **Servidor**: Estado general de recursos del backend.
 
-### Cómo utilizar:
+### Uso:
 
-1. Ingresá a la pestaña **Métricas**.
-2. Se mostrará un conjunto de gráficos organizados en columnas.
-3. Podés interactuar con los gráficos (zoom, hover, detalles).
-4. En caso de carga lenta, esperar unos segundos hasta que se muestren correctamente.
+1. Hacé clic en la pestaña **Métricas**.
+2. Observá los gráficos distribuidos en columnas.
+3. Interactuá con zoom, hover y detalles.
+4. Si tarda en cargar, esperá unos segundos.
 
 ---
 
 ## 👥 Gestión de Usuarios
 
-La sección **"Usuarios"** permite administrar los perfiles de todos los usuarios registrados en el sistema.
+Administrá todos los perfiles registrados.
 
 ### Funcionalidades:
 
-* **Ver usuarios**: Lista completa de usuarios existentes.
-* **Editar usuarios**: Cambiar nombre o rol (por ejemplo: de Profesor a Administrador).
-* **Eliminar usuarios**: Quitar usuarios definitivamente del sistema.
-* **Bloquear usuarios**: Restringir el acceso sin eliminarlos.
-* **Crear nuevos administradores**: Agregar cuentas con permisos elevados.
+- Listar usuarios.
+- Editar nombre y rol (usuario/administrador).
+- Eliminar usuarios.
+- Bloquear cuentas.
+- Crear nuevos administradores.
 
-### Cómo utilizar:
+### Uso:
 
-1. Ingresá a la pestaña **Usuarios**.
-2. Utilizá los botones disponibles en cada fila para editar o eliminar usuarios.
-3. Hacé clic en "Crear nuevo usuario" para registrar uno nuevo.
+1. Entrá a la pestaña **Usuarios**.
+2. Hacé clic en **Editar** para cambiar nombre o rol.
+3. Seleccioná **Eliminar** o **Bloquear** según necesites.
+4. Para crear, presioná **Crear nuevo usuario**, completá los datos y guardá.
 
-> ⚠️ *Los cambios realizados se aplican inmediatamente. Tené precaución al eliminar o bloquear cuentas.*
+> ⚠️ *Los cambios se aplican en tiempo real. Usá precaución al eliminar o bloquear cuentas.*
 
 ---
 
 ## ⚙️ Gestión de Reglas
 
-La sección **"Reglas"** permite definir condiciones y configuraciones específicas del sistema. Este módulo es fundamental para personalizar el comportamiento del backend.
+Establecé condiciones importantes del sistema backend.
 
 ### Funcionalidades:
 
-* **Crear reglas**: Definir nuevas condiciones o configuraciones.
-* **Editar reglas existentes**: Modificar reglas ya definidas.
-* **Eliminar reglas**: Quitar reglas que ya no se usan.
-* **Visualizar historial de cambios**: Registro de todas las modificaciones hechas a las reglas.
+- Crear, editar y eliminar reglas.
+- Visualizar historial (log) de cambios de reglas.
 
-### Cómo utilizar:
+### Uso:
 
-1. Ingresá a la pestaña **Reglas**.
-2. Para crear una nueva, hacé clic en **"Agregar regla"** y completá los campos necesarios.
-3. Usá los botones de cada regla para editar o eliminar.
-4. Accedé al **log de cambios** para ver quién hizo cada modificación y cuándo.
+1. Accedé a la pestaña **Reglas**.
+2. Para crear, presioná **Agregar regla** y completá los campos.
+3. Usá **Editar** o **Eliminar** en las reglas existentes.
+4. Consultá el **Log de cambios** para ver quién hizo qué y cuándo.
 
 ---
 
-## 🛡️ Roles del sistema
+## 🛡️ Roles del Sistema
 
-* **Administrador**: Acceso completo a todas las funcionalidades.
-* **Usuario estándar**: Acceso limitado (según configuración del sistema).
+- **Administrador**: Acceso total a todas las funcionalidades.
+- **Usuario estándar**: Acceso limitado según configuración.
 
 ---
 
-## 📋 Recomendaciones de uso
+## 📋 Recomendaciones
 
-* Verificá siempre que los cambios se hayan guardado correctamente.
-* Utilizá navegadores actualizados para garantizar la compatibilidad.
-* No compartas tus credenciales.
-* Consultá los logs regularmente para hacer auditoría de cambios.
+- Verificá que los cambios se guarden correctamente.
+- Usá navegadores compatibles y actualizados.
+- No compartas tus credenciales.
+- Revisa los logs para auditoría de cambios.
 
 ---
 
 ## 📞 Soporte
 
-Ante cualquier duda o inconveniente, contactá al equipo de soporte técnico o al administrador principal.
+En caso de dudas o problemas, contactá al equipo de soporte o al administrador principal.
 
----
