@@ -3,99 +3,135 @@ title: Guía de Usuario — Backoffice
 layout: default
 ---
 
-¡Bienvenido a la guía de usuario de nuestro Backoffice! Esta herramienta está diseñada para que los administradores gestionen eficientemente las métricas del sistema, los usuarios y las reglas de la plataforma. Aquí te explicamos cómo utilizar cada sección.
+Guía de Usuario del Backoffice
 
-1. Inicio de Sesión
+¡Bienvenido a la guía de usuario de nuestro Backoffice! Esta herramienta está diseñada para que los administradores gestionen de forma eficiente las métricas del sistema, los usuarios y las reglas de la plataforma, garantizando un control completo y seguro de la plataforma.
 
-Para acceder al Backoffice, utiliza tus credenciales de administrador en la pantalla de inicio de sesión. Si tienes problemas para acceder, contacta al soporte técnico.
+1. Monitoreo de Actividad y Rendimiento
 
-2. Gestión de Métricas
+La sección de Monitoreo de Actividad y Rendimiento es tu centro de comando para observar la salud y el desempeño de la plataforma en tiempo real. Esto te permite detectar problemas, optimizar recursos y asegurar que todos los servicios operen de manera óptima.
 
-La sección de Gestión de Métricas te proporciona una visión detallada del rendimiento de nuestro sistema backend a través de gráficos interactivos proporcionados por Datadog.
+Visualización de Indicadores Clave
 
-2.1 Visualización de Gráficos
+Al acceder a esta sección, el sistema te mostrará dashboards actualizados en tiempo real con los siguientes indicadores clave:
 
-Una vez dentro de la sección de Métricas, podrás visualizar distintos paneles que muestran el estado y el rendimiento del back:
+    Uso de CPU: Observa el porcentaje de utilización del procesador de tus servidores. Picos o sostenimiento alto pueden indicar una demanda considerable o procesos ineficientes.
 
-    Uso de CPU: Observa el porcentaje de uso del procesador a lo largo del tiempo.
+    Memoria: Monitorea el consumo de RAM. Un uso elevado constante podría señalar fugas de memoria o la necesidad de más recursos.
 
-    Rendimiento del Servidor: Monitorea la carga general del servidor y su capacidad de respuesta.
+    Número de Usuarios Activos: Visualiza la cantidad de usuarios que están interactuando con la plataforma en ese momento, brindando una idea de la carga actual.
 
-    Uso de RAM: Revisa la memoria RAM utilizada para identificar posibles cuellos de botella.
-
-    Cantidad de registros
-
-    Cantidad de conexiones
-
-Estos gráficos te permiten identificar rápidamente cualquier anomalía o problema de rendimiento, facilitando la toma de decisiones para optimizar la infraestructura.
-
-3. Gestión de Usuarios
-
-La sección de Gestión de Usuarios te permite controlar y administrar todos los estudiantes registrados en la plataforma, incluyendo la creación de nuevos administradores.
-
-3.1 Lista de Usuarios
-
-Al ingresar a esta sección, verás un listado de todos los usuarios. Para encontrar un usuario específico, puedes utilizar la barra de búsqueda o los filtros disponibles.
-
-3.2 Acciones Disponibles para Usuarios
-
-Para cada usuario en la lista, tendrás las siguientes opciones:
-
-    Editar Usuarios: Modifica el nombre, apellido, telefono, etc. de un usuario. Esto es útil para corregir errores o actualizar la información.
-
-    Eliminar Usuarios: Elimina permanentemente a un usuario del sistema. ¡Atención! Esta acción es irreversible. Asegúrate de que realmente deseas eliminar al usuario antes de confirmar.
-
-    Bloquear Usuarios: Deshabilita temporalmente la cuenta de un usuario. Un usuario bloqueado no podrá iniciar sesión. Puedes desbloquearlo en cualquier momento.
-
-3.3 Crear Administradores
-
-Desde esta sección también puedes crear nuevos usuarios con privilegios de administrador. Esta opción es fundamental para añadir personal con acceso total al Backoffice. Al crear un nuevo administrador, deberás proporcionar el nombre de usuario, contraseña y correo. El usuario creado tendra perfil de administrador y podra ingresar al backoffice
-
-4. Gestión de Reglas
-
-La sección de Gestión de Reglas te permite crear, modificar y eliminar las reglas de negocio que rigen el comportamiento de la plataforma. Además, mantiene un registro detallado de todas las modificaciones.
-
-4.1 Creación de Reglas
-
-Para crear una nueva regla:
-
-    Haz clic en el botón "Crear Nueva Regla".
-
-    Se te presentará un formulario donde deberás definir los parámetros de la regla. Estos pueden incluir condiciones, acciones, prioridades, etc., dependiendo de la complejidad de tus reglas de negocio.
-
-    Una vez configurada, guarda la regla.
-
-4.2 Edición de Reglas
-
-Para modificar una regla existente:
-
-    Selecciona la regla que deseas editar de la lista.
-
-    Realiza los cambios necesarios en los parámetros de la regla.
-
-    Guarda los cambios para que se apliquen.
-
-4.3 Eliminación de Reglas
-
-Para eliminar una regla:
-
-    Selecciona la regla que deseas eliminar.
-
-    Haz clic en el botón "Eliminar".
+    Tiempo de Respuesta: Revisa la latencia de los servicios. Tiempos de respuesta altos pueden indicar problemas de rendimiento que afectan la experiencia del usuario.
 
 
-4.4 Log de Modificaciones de Reglas
+Registro y Acceso a Logs
 
-Esta sección incluye un log detallado que registra cada creación y modificación de reglas. Este log es invaluable para:
+Cuando se produce cualquier evento relevante en la plataforma (errores, advertencias, acciones críticas), el sistema los registrará automáticamente. Podrás acceder a logs detallados para un análisis profundo, lo cual es fundamental para el diagnóstico y la resolución de problemas.
 
-    Auditoría: Permite rastrear quién hizo qué cambios y cuándo.
+Configuración de Alertas y Notificaciones
 
-    Resolución de Problemas: Ayuda a identificar si un problema en el sistema fue causado por una modificación reciente de una regla.
+Reportes Históricos y Exportación
 
-    Seguimiento: Ofrece una cronología completa del ciclo de vida de cada regla.
+Si necesitas analizar el rendimiento a lo largo del tiempo, el sistema te permite generar reportes históricos de las métricas.
 
-Cada entrada en el log incluirá al menos la fecha, la hora, el usuario que realizó la acción y una descripción de la modificación.
 
-Soporte
+2. Gestión de Usuarios y Permisos
 
-Si tienes alguna pregunta o encuentras algún problema al utilizar el Backoffice, por favor, contacta a nuestro equipo de soporte a través de classconnectadmin@ingsoft2.com
+La sección de Gestión de Usuarios y Permisos te permite controlar y administrar a todos los usuarios de la plataforma, asignando roles y permisos adecuados para garantizar la seguridad y una administración eficiente.
+
+Visualización del Listado de Usuarios
+
+Cuando accedas a esta sección, el sistema te mostrará una lista completa de los usuarios registrados. Esta lista incluirá información relevante para cada usuario, como:
+
+    Nombre: El nombre de identificación del usuario.
+
+    Rol: El rol actual del usuario dentro de la plataforma (por ejemplo, usuario regular, administrador, etc.).
+
+    Estado: Si el usuario está activo (puede iniciar sesión) o bloqueado (su acceso está restringido).
+
+    Fecha de Registro: La fecha en que el usuario se unió a la plataforma.
+
+    Y demas datos pertinentes al estudiante
+
+Edición de Roles y Permisos
+
+Para modificar los permisos de un usuario:
+
+    Seleccioná el usuario de la lista cuyo perfil deseas modificar.
+
+    El sistema te permitirá actualizar los datos de susd permisos.
+
+    Una vez guardados los cambios, estos se reflejarán de forma inmediata y recibirás una confirmación de la actualización.
+
+Bloqueo y Desbloqueo de Usuarios
+
+Si necesitas gestionar el acceso de un usuario:
+
+    Seleccioná el usuario que deseas bloquear o desbloquear.
+
+    El sistema cambiará el estado del usuario en consecuencia:
+
+        Si lo bloqueas, se impedirá su acceso a la plataforma.
+
+        Si lo desbloqueas, su acceso será restaurado.
+
+
+Validación de Acciones
+
+El sistema está diseñado para validar las operaciones de modificación de permisos o roles. Si intentas realizar una acción que podría generar conflictos o errores (por ejemplo, datos inválidos o permisos insuficientes), el sistema te mostrará mensajes de error claros para guiarte.
+
+Registro de Administradores
+
+Como administrador, puedes dar de alta a otros administradores en la plataforma.
+
+    Registro Exitoso: Si el registro se realiza correctamente, el sistema registrará el nuevo administrador con sus credenciales y permitirá su ingreso.
+
+    Campos Faltantes/Erróneos: Si falta información o hay datos incorrectos, el sistema te indicará los campos a corregir y no permitirá el registro hasta que los datos sean válidos.
+
+    Registro Fallido: En caso de un error del servicio, el sistema mostrará un mensaje de error acorde al usuario.
+
+3. Configuración de Reglas y Normativas
+
+La sección de Configuración de Reglas y Normativas te permite definir y actualizar las políticas, restricciones y lineamientos de comportamiento que rigen el uso de la plataforma. Esto es vital para garantizar un entorno seguro y el cumplimiento de estándares institucionales y legales.
+
+Creación y Actualización de Reglas
+
+Al acceder a esta sección, el sistema te permitirá:
+
+    Crear nuevas reglas: Podrás definir nuevas normativas para la plataforma.
+
+    Actualizar reglas existentes: Podrás modificar las reglas ya establecidas.
+
+Para cada regla, podrás configurar campos como:
+
+    Título: Un nombre descriptivo para la regla.
+
+    Descripción: Un detalle de lo que la regla implica.
+
+    Fecha de Vigencia: El período en el que la regla estará activa.
+
+    Condiciones de Aplicación: Los criterios específicos bajo los cuales la regla se activará o aplicará.
+
+Validación y Consistencia
+
+Cuando ingreses nuevas reglas o actualices las existentes, el sistema validará que los datos sean correctos y consistentes. Si la información está incompleta o es inconsistente, se mostrarán mensajes de error claros para que puedas corregirlos antes de guardar.
+
+Publicación y Notificación
+
+Una vez que finalices la configuración de las reglas:
+
+    El sistema publicará las normativas actualizadas en la plataforma.
+
+Registro de Auditoría de Cambios
+
+Toda modificación realizada en las reglas y normativas se registrará en un log de auditoría. Este log incluirá:
+
+    El usuario que realizó el cambio: Quién modificó la regla.
+
+    La naturaleza de la modificación: Qué tipo de cambio se hizo (creación, edición, eliminación).
+
+    La fecha y hora de la acción.
+
+Acceso Restringido y Seguridad
+
+La sección de configuración de reglas es de alta seguridad. El sistema garantizará que solo los usuarios debidamente autorizados puedan realizar cambios, protegiendo la integridad y confidencialidad de las normativas de la plataforma.
