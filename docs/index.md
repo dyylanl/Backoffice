@@ -2,7 +2,6 @@
 title: Guía de Usuario — Backoffice
 layout: default
 ---
-Comprendo perfectamente lo que necesitas. Aquí tienes una guía de usuario completa para tu backoffice, formateada en Markdown, lista para subir a tu GitHub Page:
 
 Guía de Usuario del Backoffice
 
