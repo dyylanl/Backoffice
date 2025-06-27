@@ -22,7 +22,7 @@ Al acceder a esta sección, el sistema te mostrará dashboards actualizados en t
     Número de Usuarios Activos: Visualiza la cantidad de usuarios que están interactuando con la plataforma en ese momento, brindando una idea de la carga actual.
 
     Tiempo de Respuesta: Revisa la latencia de los servicios. Tiempos de respuesta altos pueden indicar problemas de rendimiento que afectan la experiencia del usuario.
-
+![Captura de pantalla del monitoreo de actividad](metricas.png "Panel de Monitoreo del Backoffice")
 
 Registro y Acceso a Logs
 
