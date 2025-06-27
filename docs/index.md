@@ -62,7 +62,7 @@ Para modificar los permisos de un usuario:
     El sistema te permitirá actualizar los datos de susd permisos.
 
     Una vez guardados los cambios, estos se reflejarán de forma inmediata y recibirás una confirmación de la actualización.
-
+![Captura de pantalla de editar usuario](../edit.png "Editar Usuario")
 Bloqueo y Desbloqueo de Usuarios
 
 Si necesitas gestionar el acceso de un usuario:
