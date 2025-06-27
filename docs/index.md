@@ -89,6 +89,7 @@ Como administrador, puedes dar de alta a otros administradores en la plataforma.
     Campos Faltantes/Erróneos: Si falta información o hay datos incorrectos, el sistema te indicará los campos a corregir y no permitirá el registro hasta que los datos sean válidos.
 
     Registro Fallido: En caso de un error del servicio, el sistema mostrará un mensaje de error acorde al usuario.
+![Captura de pantalla de error](../error.png "Error al crear Administrador")
 
 3. Configuración de Reglas y Normativas
 
