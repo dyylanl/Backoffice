@@ -22,7 +22,7 @@ Al acceder a esta sección, el sistema te mostrará dashboards actualizados en t
     Número de Usuarios Activos: Visualiza la cantidad de usuarios que están interactuando con la plataforma en ese momento, brindando una idea de la carga actual.
 
     Tiempo de Respuesta: Revisa la latencia de los servicios. Tiempos de respuesta altos pueden indicar problemas de rendimiento que afectan la experiencia del usuario.
-![Captura de pantalla del monitoreo de actividad](../metricas.png "Panel de Monitoreo del Backoffice")
+![Captura de pantalla del monitoreo de actividad](metricas.png "Panel de Monitoreo del Backoffice")
 
 Registro y Acceso a Logs
 
@@ -52,7 +52,7 @@ Cuando accedas a esta sección, el sistema te mostrará una lista completa de lo
     Fecha de Registro: La fecha en que el usuario se unió a la plataforma.
 
     Y demas datos pertinentes al estudiante
-![Captura de pantalla de los usuarios](../users.png "Panel de Usuarios")
+![Captura de pantalla de los usuarios](users.png "Panel de Usuarios")
 Edición de Roles y Permisos
 
 Para modificar los permisos de un usuario:
@@ -62,7 +62,7 @@ Para modificar los permisos de un usuario:
     El sistema te permitirá actualizar los datos de susd permisos.
 
     Una vez guardados los cambios, estos se reflejarán de forma inmediata y recibirás una confirmación de la actualización.
-![Captura de pantalla de editar usuario](../edit.png "Editar Usuario")
+![Captura de pantalla de editar usuario](edit.png "Editar Usuario")
 Bloqueo y Desbloqueo de Usuarios
 
 Si necesitas gestionar el acceso de un usuario:
@@ -89,7 +89,7 @@ Como administrador, puedes dar de alta a otros administradores en la plataforma.
     Campos Faltantes/Erróneos: Si falta información o hay datos incorrectos, el sistema te indicará los campos a corregir y no permitirá el registro hasta que los datos sean válidos.
 
     Registro Fallido: En caso de un error del servicio, el sistema mostrará un mensaje de error acorde al usuario.
-![Captura de pantalla de error](../error.png "Error al crear Administrador")
+![Captura de pantalla de error](error.png "Error al crear Administrador")
 
 3. Configuración de Reglas y Normativas
 
