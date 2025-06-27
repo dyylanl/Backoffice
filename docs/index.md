@@ -52,7 +52,7 @@ Cuando accedas a esta sección, el sistema te mostrará una lista completa de lo
     Fecha de Registro: La fecha en que el usuario se unió a la plataforma.
 
     Y demas datos pertinentes al estudiante
-
+![Captura de pantalla de los usuarios](../users.png "Panel de Usuarios")
 Edición de Roles y Permisos
 
 Para modificar los permisos de un usuario:
